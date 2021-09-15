@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\OB-BE-dotnet\\OB-BE-dotnet\\OB-BE-dotnet.csproj": {}
+    "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\OB-BE-dotnet\\OB-BE-dotnet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\OB-BE-dotnet\\OB-BE-dotnet\\OB-BE-dotnet.csproj": {
+    "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\OB-BE-dotnet\\OB-BE-dotnet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\OB-BE-dotnet\\OB-BE-dotnet\\OB-BE-dotnet.csproj",
+        "projectUniqueName": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\OB-BE-dotnet\\OB-BE-dotnet.csproj",
         "projectName": "OB-BE-dotnet",
-        "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\OB-BE-dotnet\\OB-BE-dotnet\\OB-BE-dotnet.csproj",
+        "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\OB-BE-dotnet\\OB-BE-dotnet.csproj",
         "packagesPath": "C:\\Users\\cldlk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\OB-BE-dotnet\\OB-BE-dotnet\\obj\\",
+        "outputPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\OB-BE-dotnet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cldlk\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,20 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[6.2.1, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[6.2.1, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[6.2.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
