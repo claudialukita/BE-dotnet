@@ -1,0 +1,10 @@
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\bin\Debug\netcoreapp3.1\BLL.deps.json
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\bin\Debug\netcoreapp3.1\BLL.dll
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\bin\Debug\netcoreapp3.1\BLL.pdb
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\obj\Debug\netcoreapp3.1\BLL.csproj.AssemblyReference.cache
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\obj\Debug\netcoreapp3.1\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\obj\Debug\netcoreapp3.1\BLL.AssemblyInfoInputs.cache
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\obj\Debug\netcoreapp3.1\BLL.AssemblyInfo.cs
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\obj\Debug\netcoreapp3.1\BLL.csproj.CoreCompileInputs.cache
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\obj\Debug\netcoreapp3.1\BLL.dll
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\obj\Debug\netcoreapp3.1\BLL.pdb
