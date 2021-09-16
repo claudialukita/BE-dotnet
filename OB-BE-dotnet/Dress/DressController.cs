@@ -30,7 +30,14 @@ namespace OB_BE_dotnet.Dress
         {
             _logger = logger;
             _unitOfWork = unitOfWork;
-            _mapper = mapper;
+
+            MapperConfiguration config = new MapperConfiguration(m =>
+            {
+                m.CreateMap<DressDTO, DressModel>();
+                m.CreateMap<DressModel, DressDTO>();
+            });
+
+            _mapper = config.CreateMapper();
 
         }
         /// <summary>
