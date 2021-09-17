@@ -13,6 +13,8 @@ namespace DAL.Model
         [ForeignKey("DesignerId")]
         public DesignerModel Designer { get; set; }
 
+        public Guid? DesignerId { get; set; }
+
         [StringLength(255)]
         public string Name { get; set; }
 

@@ -99,26 +99,33 @@ namespace OB_BE_dotnet.Dress
                 DressModel _dressDetail = new DressModel();
                 DesignerModel _designerDetail = new DesignerModel();
 
-                //bool isExist = _unitOfWork.DesignerRepository.IsExist(x => x.Name == dressBody.Designer.Name);
+                bool isExist = _unitOfWork.DesignerRepository.IsExist(x => x.Name == dressBody.Designer.Name);
 
-                //if (isExist)
-                //{
-                //    var result = await _unitOfWork.DesignerRepository.GetAll().Where(x => x.Name == dressBody.Designer.Name).FirstAsync();
-                //    _dressDetailNoDesigner.Id = Guid.NewGuid();
-                //    _dressDetailNoDesigner.Name = dressBody.Name;
-                //    _dressDetailNoDesigner.Type = dressBody.Type;
-                //    _dressDetailNoDesigner.Color = dressBody.Color;
-                //    _dressDetailNoDesigner.Size = dressBody.Size;
-                //    _dressDetailNoDesigner.Price = dressBody.Price;
-                //    _dressDetailNoDesigner.DesignerId = result.Id;
-                //    var dressDetail = _mapper.Map<DressNoDesignerModel>(_dressDetailNoDesigner);
-                //    var dressResult = await _unitOfWork.DressNoDesignerRepository.AddAsync(dressDetail);
-                //    await _unitOfWork.SaveAsync();
-                //    return new OkObjectResult(dressResult);
+                if (isExist)
+                {
+                    var result = await _unitOfWork.DesignerRepository.GetAll().Where(x => x.Name == dressBody.Designer.Name).AsNoTracking().FirstAsync();
+                    _dressDetail.Id = Guid.NewGuid();
+                    _dressDetail.Name = dressBody.Name;
+                    _dressDetail.Type = dressBody.Type;
+                    _dressDetail.Color = dressBody.Color;
+                    _dressDetail.Size = dressBody.Size;
+                    _dressDetail.Price = dressBody.Price;
+                    _dressDetail.DesignerId = result.Id;
+                    //untuk set
+                    var dressDetail = _mapper.Map<DressModel>(_dressDetail);
+                    dressDetail.Designer = new DesignerModel
+                    {
+                        Id = result.Id,
+                        Name = "Gucci"
+                    };
+                    var dressResult = await _unitOfWork.DressRepository.AddAsync(dressDetail);
+                    await _unitOfWork.SaveAsync();
+                    return new OkObjectResult(dressResult);
 
 
-                //} else
-                //{
+                }
+                else
+                {
                     _designerDetail.Id = Guid.NewGuid();
                     _designerDetail.Name = dressBody.Designer.Name;
                     _designerDetail.Email = dressBody.Designer.Email;
@@ -133,10 +140,10 @@ namespace OB_BE_dotnet.Dress
                     var dressResult = await _unitOfWork.DressRepository.AddAsync(dressDetail);
                     await _unitOfWork.SaveAsync();
                     return new OkObjectResult(dressResult);
-                //}
+                }
 
-                
-                
+
+
 
                 //}
                 //else
@@ -146,7 +153,7 @@ namespace OB_BE_dotnet.Dress
 
                 //Console.WriteLine(JsonSerializer.Serialize(_dressList));
 
-                
+
 
             }
             catch (Exception e)
@@ -195,8 +202,8 @@ namespace OB_BE_dotnet.Dress
                     _dressDetail.Designer = _designerDetail;
                     _dressDetail.UpdatedDate = DateTime.Now;
 
-                    DressModel dressModel = _mapper.Map<DressModel>(_dressDetail);
-                    _unitOfWork.DressRepository.Edit(dressModel);
+                    //DressModel dressModel = _mapper.Map<DressModel>(_dressDetail);
+                    _unitOfWork.DressRepository.Edit(_dressDetail);
                     await _unitOfWork.SaveAsync();
                     return new OkObjectResult($"Success update dress with id: {id}");
 
