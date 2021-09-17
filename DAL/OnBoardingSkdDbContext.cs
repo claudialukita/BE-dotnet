@@ -16,6 +16,7 @@ namespace DAL
         }
 
         public DbSet<DressModel> Dresses { get; set; }
+        public DbSet<DesignerModel> Designers { get; set; }
 
     }
 }

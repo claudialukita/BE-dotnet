@@ -10,6 +10,9 @@ namespace DAL.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid? Id { get; set; }
 
+        [ForeignKey("DesignerId")]
+        public DesignerModel Designer { get; set; }
+
         [StringLength(255)]
         public string Name { get; set; }
 
@@ -25,10 +28,12 @@ namespace DAL.Model
         public double Price { get; set; }
 
         public DateTime CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
 
         public DressModel()
         {
-            CreatedDate = DateTime.UtcNow;
+            CreatedDate = DateTime.Now;
         }
     }
+
 }

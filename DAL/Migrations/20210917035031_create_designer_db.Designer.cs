@@ -4,45 +4,22 @@ using DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DAL.Migrations
 {
     [DbContext(typeof(OnBoardingSkdDbContext))]
-    partial class OnBoardingSkdDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210917035031_create_designer_db")]
+    partial class create_designer_db
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.10")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("DAL.Model.DesignerModel", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Designers");
-                });
 
             modelBuilder.Entity("DAL.Model.DressModel", b =>
                 {
@@ -56,9 +33,6 @@ namespace DAL.Migrations
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<Guid?>("DesignerId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .HasMaxLength(255)
@@ -80,22 +54,11 @@ namespace DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DesignerId");
-
                     b.HasIndex("Name")
                         .IsUnique()
                         .HasFilter("[Name] IS NOT NULL");
 
                     b.ToTable("Dresses");
-                });
-
-            modelBuilder.Entity("DAL.Model.DressModel", b =>
-                {
-                    b.HasOne("DAL.Model.DesignerModel", "Designer")
-                        .WithMany()
-                        .HasForeignKey("DesignerId");
-
-                    b.Navigation("Designer");
                 });
 #pragma warning restore 612, 618
         }

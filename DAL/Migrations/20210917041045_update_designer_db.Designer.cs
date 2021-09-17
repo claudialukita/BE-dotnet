@@ -4,14 +4,16 @@ using DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DAL.Migrations
 {
     [DbContext(typeof(OnBoardingSkdDbContext))]
-    partial class OnBoardingSkdDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210917041045_update_designer_db")]
+    partial class update_designer_db
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,7 +43,7 @@ namespace DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Designers");
+                    b.ToTable("DesignerModel");
                 });
 
             modelBuilder.Entity("DAL.Model.DressModel", b =>
@@ -91,11 +93,11 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("DAL.Model.DressModel", b =>
                 {
-                    b.HasOne("DAL.Model.DesignerModel", "Designer")
+                    b.HasOne("DAL.Model.DesignerModel", "DesignerModel")
                         .WithMany()
                         .HasForeignKey("DesignerId");
 
-                    b.Navigation("Designer");
+                    b.Navigation("DesignerModel");
                 });
 #pragma warning restore 612, 618
         }

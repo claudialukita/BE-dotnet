@@ -1,12 +1,11 @@
 ﻿using DAL.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace DAL.Repositories
 {
-    class DressRepository : BaseRepository<DressModel>
+    public class DressRepository : BaseRepository<DressModel>
     {
         public DressRepository(OnBoardingSkdDbContext dbContext) : base(dbContext) { }
 
@@ -14,5 +13,6 @@ namespace DAL.Repositories
         //{
         //    return this.GetAll().Where(x => x.Name == name);
         //}
+
     }
 }

@@ -12,6 +12,7 @@ namespace DAL.Repositories
         private readonly OnBoardingSkdDbContext dbContext;
 
         public IBaseRepository<DressModel> DressRepository { get; }
+        public IBaseRepository<DesignerModel> DesignerRepository { get; }
         //public DressRepository DressRepository { get; }
 
         public UnitOfWork(OnBoardingSkdDbContext context)
@@ -19,6 +20,7 @@ namespace DAL.Repositories
             dbContext = context;
 
             DressRepository = new BaseRepository<DressModel>(context);
+            DesignerRepository = new BaseRepository<DesignerModel>(context);
             //DressRepository = new DressRepository(context);
         }
 
