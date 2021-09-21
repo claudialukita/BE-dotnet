@@ -1,3 +1,6 @@
+using BLL.Kafka;
+using BLL.Messaging;
+using BLL.Redis;
 using DAL;
 using DAL.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -27,6 +30,12 @@ namespace OB_BE_dotnet
             services.AddControllers();
 
             services.AddDbContext<OnBoardingSkdDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IRedisService, RedisService>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IKafkaSender, KafkaSender>();
+
+            //services.AddScoped<IMessageSenderFactory, MessageSenderFactory>();
 
             services.AddScoped<UnitOfWork>();
             services.AddSwaggerGen(c =>

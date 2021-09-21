@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DAL.Repositories;
 using DAL.Model;
+using BLL.Messaging;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -9,6 +10,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
+using BLL;
+using BLL.Redis;
+using BLL.Kafka;
 
 namespace OB_BE_dotnet.Dress
 {
@@ -23,8 +28,10 @@ namespace OB_BE_dotnet.Dress
         private IMapper _mapper;
 
         private readonly ILogger<DressController> _logger;
+        private readonly DressService _dressService;
+        private readonly DesignerService _designerService;
 
-        public DressController(ILogger<DressController> logger, UnitOfWork unitOfWork, IMapper mapper)
+        public DressController(ILogger<DressController> logger, UnitOfWork unitOfWork, IUnitOfWork iuow, IConfiguration configuration, IRedisService redis, IKafkaSender kafkaSender/*, ProcessSumService processSumService*/)
         {
             _logger = logger;
             _unitOfWork = unitOfWork;
@@ -36,6 +43,10 @@ namespace OB_BE_dotnet.Dress
             });
 
             _mapper = config.CreateMapper();
+
+            _dressService ??= new DressService(kafkaSender, iuow, configuration, redis/*, processSumService*//*, msgSernderFactory*/);
+            _designerService ??= new DesignerService(iuow, redis);
+
 
         }
         /// <summary>
@@ -49,9 +60,9 @@ namespace OB_BE_dotnet.Dress
         [ProducesResponseType(typeof(string), 400)]
         public async Task<ActionResult> GetAllAsync()
         {
-            //var result = await _unitOfWork.DressRepository.GetAll().ToListAsync();
-            //_repository.GetAll().Include(d => d.Child).ThenInclude(c => c.GrandChild).FirstOrDefault(x => x.Id.Equals(id));
-            var result = await _unitOfWork.DressRepository.GetAll().Include(a => a.Designer).ToListAsync();
+
+            var result = await _dressService.GetAllDressAsync();
+            //var result = await _unitOfWork.DressRepository.GetAll().Include(a => a.Designer).ToListAsync();
             return new OkObjectResult(result);
         }
 
@@ -66,13 +77,36 @@ namespace OB_BE_dotnet.Dress
         /// <param name="name">dress Model.</param>
         /// <response code="200">Request ok.</response>
         [HttpGet]
+        [Route("/Dress/GetDress/{id}")]
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(DressModel), 200)]
+        [ProducesResponseType(typeof(string), 400)]
+        public async Task<ActionResult> GetByNameAsync([FromRoute] Guid id)
+        {
+            //var result = await _unitOfWork.DressRepository.GetAll().Where(x => x.Name.Contains(dressName)).Include(a => a.Designer).ToListAsync();
+            var result = await _dressService.GetDressIdAsync(id);
+
+            if (result != null)
+            {
+                return new OkObjectResult(result);
+            }
+            return new NotFoundResult();
+        }
+
+        /// <summary>
+        /// Get dress by name
+        /// </summary>
+        /// <param name="name">dress Model.</param>
+        /// <response code="200">Request ok.</response>
+        [HttpGet]
         [Route("/Dress/GetSpecific/{dressName}")]
         [Produces("application/json")]
         [ProducesResponseType(typeof(DressModel), 200)]
         [ProducesResponseType(typeof(string), 400)]
         public async Task<ActionResult> GetByNameAsync([FromRoute] string dressName)
         {
-            var result = await _unitOfWork.DressRepository.GetAll().Where(x => x.Name.Contains(dressName)).Include(a => a.Designer).ToListAsync();
+            //var result = await _unitOfWork.DressRepository.GetAll().Where(x => x.Name.Contains(dressName)).Include(a => a.Designer).ToListAsync();
+            var result = await _dressService.GetDressByNameAsync(dressName);
 
             if (result != null)
             {
@@ -99,11 +133,12 @@ namespace OB_BE_dotnet.Dress
                 DressModel _dressDetail = new DressModel();
                 DesignerModel _designerDetail = new DesignerModel();
 
-                bool isExist = _unitOfWork.DesignerRepository.IsExist(x => x.Name == dressBody.Designer.Name);
+                //bool isExist = _unitOfWork.DesignerRepository.IsExist(x => x.Name == dressBody.Designer.Name);
+                bool isExist = _designerService.IsDesignerExist(dressBody.Designer.Name);
 
                 if (isExist)
                 {
-                    var result = await _unitOfWork.DesignerRepository.GetAll().Where(x => x.Name == dressBody.Designer.Name).AsNoTracking().FirstAsync();
+                    var result = await _designerService.GetDesignerByNameNoTracking(dressBody.Designer.Name);
                     _dressDetail.Id = Guid.NewGuid();
                     _dressDetail.Name = dressBody.Name;
                     _dressDetail.Type = dressBody.Type;
@@ -112,23 +147,23 @@ namespace OB_BE_dotnet.Dress
                     _dressDetail.Price = dressBody.Price;
                     _dressDetail.DesignerId = result.Id;
                     //untuk set
-                    var dressDetail = _mapper.Map<DressModel>(_dressDetail);
-                    dressDetail.Designer = new DesignerModel
-                    {
-                        Id = result.Id,
-                        Name = "Gucci"
-                    };
-                    var dressResult = await _unitOfWork.DressRepository.AddAsync(dressDetail);
+                    //var dressDetail = _mapper.Map<DressModel>(_dressDetail);
+                    //dressDetail.Designer = new DesignerModel
+                    //{
+                    //    Id = result.Id,
+                    //    Name = "Gucci"
+                    //};
+                    //var dressResult = await _unitOfWork.DressRepository.AddAsync(_dressDetail);
+                    var dressResult = await _dressService.CreateDressAsync(_dressDetail);
                     await _unitOfWork.SaveAsync();
                     return new OkObjectResult(dressResult);
-
-
                 }
                 else
                 {
                     _designerDetail.Id = Guid.NewGuid();
                     _designerDetail.Name = dressBody.Designer.Name;
                     _designerDetail.Email = dressBody.Designer.Email;
+
                     _dressDetail.Id = Guid.NewGuid();
                     _dressDetail.Name = dressBody.Name;
                     _dressDetail.Type = dressBody.Type;
@@ -136,13 +171,12 @@ namespace OB_BE_dotnet.Dress
                     _dressDetail.Size = dressBody.Size;
                     _dressDetail.Price = dressBody.Price;
                     _dressDetail.Designer = _designerDetail;
-                    var dressDetail = _mapper.Map<DressModel>(_dressDetail);
-                    var dressResult = await _unitOfWork.DressRepository.AddAsync(dressDetail);
+
+                    //var dressResult = await _unitOfWork.DressRepository.AddAsync(_dressDetail);
+                    var dressResult = await _dressService.CreateDressAsync(_dressDetail);
                     await _unitOfWork.SaveAsync();
                     return new OkObjectResult(dressResult);
                 }
-
-
 
 
                 //}
@@ -152,8 +186,6 @@ namespace OB_BE_dotnet.Dress
                 //}
 
                 //Console.WriteLine(JsonSerializer.Serialize(_dressList));
-
-
 
             }
             catch (Exception e)
@@ -176,35 +208,35 @@ namespace OB_BE_dotnet.Dress
         [ProducesResponseType(typeof(string), 400)]
         public async Task<ActionResult> UpdateAsync([FromRoute] Guid id, [FromBody] DressByDesignerNoIdDTO dressBody)
         {
-            DressModel _dressDetail = new DressModel();
-            DesignerModel _designerDetail = new DesignerModel();
 
             try
             {
-                bool isExist = _unitOfWork.DressRepository.IsExist(x => x.Id == id);
+                //var _dressDetail = await _unitOfWork.DressRepository.GetByIdAsync(id);
+                var _dressDetail = await _dressService.GetDressById(id);
 
-                if (isExist)
+                if (_dressDetail != null)
                 {
 
-                    var result = await _unitOfWork.DesignerRepository.GetAll().Where(x => x.Name == dressBody.Designer.Name).AsNoTracking().FirstAsync();
+                    //var result = await _unitOfWork.DesignerRepository.GetAll().Where(x => x.Name == dressBody.Designer.Name).FirstAsync();
+                    var result = await _designerService.GetDesignerByName(dressBody.Designer.Name);
 
-                    _designerDetail.Id = result.Id;
-                    _designerDetail.Name = dressBody.Designer.Name;
-                    _designerDetail.Email = dressBody.Designer.Email;
-                    _designerDetail.UpdatedDate = DateTime.Now;
+                    result.Name = dressBody.Designer.Name;
+                    result.Email = dressBody.Designer.Email;
+                    result.UpdatedDate = DateTime.Now;
 
-                    _dressDetail.Id = id;
                     _dressDetail.Name = dressBody.Name;
                     _dressDetail.Type = dressBody.Type;
                     _dressDetail.Color = dressBody.Color;
                     _dressDetail.Size = dressBody.Size;
                     _dressDetail.Price = dressBody.Price;
-                    _dressDetail.Designer = _designerDetail;
                     _dressDetail.UpdatedDate = DateTime.Now;
 
-                    //DressModel dressModel = _mapper.Map<DressModel>(_dressDetail);
-                    _unitOfWork.DressRepository.Edit(_dressDetail);
-                    await _unitOfWork.SaveAsync();
+                    //_unitOfWork.DressRepository.Edit(_dressDetail);
+                    //_unitOfWork.DesignerRepository.Edit(result);
+                    //await _unitOfWork.SaveAsync();
+
+                    await _dressService.UpdateDress(_dressDetail);
+                    await _designerService.UpdateDesigner(result);
                     return new OkObjectResult($"Success update dress with id: {id}");
 
                 }
@@ -232,12 +264,14 @@ namespace OB_BE_dotnet.Dress
         [ProducesResponseType(typeof(string), 400)]
         public async Task<ActionResult> DeleteDressAsync([FromRoute] Guid id)
         {
-            bool isExist = _unitOfWork.DressRepository.IsExist(x => x.Id == id);
+            //bool isExist = _unitOfWork.DressRepository.IsExist(x => x.Id == id);
+            bool isExist = _dressService.IsDressExist(id);
 
             if (isExist)
             {
-                _unitOfWork.DressRepository.Delete(d => d.Id == id);
-                await _unitOfWork.SaveAsync();
+                //_unitOfWork.DressRepository.Delete(d => d.Id == id);
+                //await _unitOfWork.SaveAsync();
+                await _dressService.DeleteDressById(id);
                 return new OkObjectResult($"Success delete dress with id: {id}");
 
             }
@@ -259,12 +293,14 @@ namespace OB_BE_dotnet.Dress
         [ProducesResponseType(typeof(string), 400)]
         public async Task<ActionResult> DeleteDressAsync([FromRoute] string dressName)
         {
-            bool isExist = _unitOfWork.DressRepository.IsExist(x => x.Name == dressName);
+            //bool isExist = _unitOfWork.DressRepository.IsExist(x => x.Name == dressName);
+            bool isExist = _dressService.IsDressExistByName(dressName);
 
             if (isExist)
             {
-                _unitOfWork.DressRepository.Delete(d => d.Name == dressName);
-                await _unitOfWork.SaveAsync();
+                //_unitOfWork.DressRepository.Delete(d => d.Name == dressName);
+                //await _unitOfWork.SaveAsync();
+                await _dressService.DeleteDressByName(dressName);
                 return new OkObjectResult($"Success delete dress: {dressName}");
 
             }

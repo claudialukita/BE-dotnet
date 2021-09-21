@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -35,6 +36,11 @@ namespace DAL.Model
         public DressModel()
         {
             CreatedDate = DateTime.Now;
+        }
+
+        public static implicit operator DressModel(List<DressModel> v)
+        {
+            throw new NotImplementedException();
         }
     }
 

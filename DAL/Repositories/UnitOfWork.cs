@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repositories
 {
-    public class UnitOfWork : IDisposable
+    public class UnitOfWork : IDisposable, IUnitOfWork
     {
         private readonly OnBoardingSkdDbContext dbContext;
 

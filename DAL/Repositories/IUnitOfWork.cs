@@ -9,6 +9,7 @@ namespace DAL.Repositories
     public interface IUnitOfWork : IDisposable
     {
         IBaseRepository<DressModel> DressRepository { get; }
+        IBaseRepository<DesignerModel> DesignerRepository { get; }
         void Save();
         Task SaveAsync(CancellationToken cancellationToken = default(CancellationToken));
         IDbContextTransaction StartNewTransaction();
