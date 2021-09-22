@@ -16,9 +16,8 @@ namespace BLL.Kafka
         private readonly IConfiguration _config;
         private CancellationTokenSource _cancellationTokenSource;
         private readonly ILogger _logger;
-        //private readonly ProcessSumService _processSumService;
 
-        public ConsumerService(IConfiguration config, ILogger<ConsumerService> logger/*, ProcessSumService processNameService*/)
+        public ConsumerService(IConfiguration config, ILogger<ConsumerService> logger)
         {
             _config = config;
             _consumerConfig = new ConsumerConfig
@@ -31,7 +30,6 @@ namespace BLL.Kafka
                 IsolationLevel=IsolationLevel.ReadCommitted
             };
             _logger = logger;
-            //_processSumService = processNameService;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -41,7 +39,6 @@ namespace BLL.Kafka
             List<Task> tasks = new List<Task>
             {
                 RegisterTaskProcessName(stoppingToken),
-                //RegisterTaskCategoryName(stoppingToken)
             };
 
             await Task.WhenAll(tasks.ToArray());
@@ -52,12 +49,11 @@ namespace BLL.Kafka
             return Task.Run(async () =>
             {
                 var topic = "tryTopic";
-                //var topic = _config.GetValue<string>("tryTopic");
                 do
                 {
                     try
                     {
-                        await ConsumeAsync(topic,/* "sell_name", _processSumService.ConsumeAsync, */false, _cancellationTokenSource.Token);
+                        await ConsumeAsync(topic, false, _cancellationTokenSource.Token);
                     }
                     catch (Exception e)
                     {
@@ -67,26 +63,7 @@ namespace BLL.Kafka
             }, stoppingToken);
         }
 
-        //private Task RegisterTaskCategoryName(CancellationToken stoppingToken)
-        //{
-        //    return Task.Run(async () =>
-        //    {
-        //        var topic = _config.GetValue<string>("Topic:ProcessCategory");
-        //        do
-        //        {
-        //            try
-        //            {
-        //                await ConsumeAsync(topic, "sell_category", _processSumService.ConsumeAsync, false, _cancellationTokenSource.Token);
-        //            }
-        //            catch (Exception e)
-        //            {
-        //                _logger.LogCritical(e, $"Error when consuming topic \"{topic}\".");
-        //            }
-        //        } while (!_cancellationTokenSource.IsCancellationRequested);
-        //    }, stoppingToken);
-        //}
-
-        private async Task ConsumeAsync(string topic,/* string redisSumKey, Func<ConsumeResult<Ignore, string>, string, CancellationToken, Task> consumeTask, */ bool commitOnError, CancellationToken cancellationToken)
+        private async Task ConsumeAsync(string topic, bool commitOnError, CancellationToken cancellationToken)
         {
             using (var consumer = new ConsumerBuilder<Ignore, string>(_consumerConfig).Build())
             {
@@ -117,7 +94,6 @@ namespace BLL.Kafka
                         try
                         {
                             _logger.LogInformation(JsonConvert.SerializeObject(result));
-                            //await consumeTask(result, redisSumKey, cancellationToken);
                         }
                         catch (OperationCanceledException e)
                         {

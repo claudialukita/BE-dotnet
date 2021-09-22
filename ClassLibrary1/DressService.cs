@@ -22,26 +22,18 @@ namespace BLL.Messaging
         private readonly IRedisService _redis;
         private readonly ProcessSumService _processSumService;
         private readonly SchedulerService _schedulerService;
-        //private readonly IJobFactory _jobFactory;
 
-        //private readonly IMessageSenderFactory _msgSernderFactory;
-
-        public DressService(IKafkaSender kafkaSender, IUnitOfWork unitOfWork, IConfiguration config, IRedisService redis, SchedulerService schedulerService/*, ProcessSumService processSumService*//*, IMessageSenderFactory msgSernderFactory*/)
+        public DressService(IKafkaSender kafkaSender, IUnitOfWork unitOfWork, IConfiguration config, IRedisService redis, SchedulerService schedulerService)
         {
             _kafkaSender = kafkaSender;
             _unitOfWork = unitOfWork;
             _config = config;
             _redis = redis;
             _schedulerService = schedulerService;
-            //_processSumService = processSumService;
-
-            //_msgSernderFactory = msgSernderFactory;
         }
 
         public async Task<List<DressModel>> GetAllDressAsync()
         {
-            //var tokenSource = new CancellationToken();
-            //await _schedulerService.StartAsync(tokenSource);
             _schedulerService.Initialize();
             var tokenSource = new CancellationToken();
             await _schedulerService.StartAsync(tokenSource);
@@ -59,7 +51,6 @@ namespace BLL.Messaging
 
             }
             return dressModelList;
-            //return await _unitOfWork.DressRepository.GetAll().Where(x => x.Name.Contains(dressName)).Include(a => a.Designer).ToListAsync();
         }
         
         public async Task<DressModel> GetDressIdAsync(Guid id)
@@ -73,13 +64,11 @@ namespace BLL.Messaging
 
             }
             return dressModel;
-            //return await _unitOfWork.DressRepository.GetAll().Where(x => x.Name.Contains(dressName)).Include(a => a.Designer).ToListAsync();
         }
 
         public async Task<DressModel> CreateDressAsync(DressModel dressBody)
         {
             await _kafkaSender.SendAsync("tryTopic", dressBody);
-            //_processSumService.ConsumerAsync("tryTopic", dressBody.Id.ToString(), System.Threading.CancellationToken.None);
             return await _unitOfWork.DressRepository.AddAsync(dressBody);
         }
 
