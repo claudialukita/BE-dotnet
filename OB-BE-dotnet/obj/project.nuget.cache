@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2/h+djphlqL7GFRVdVJ165+GRjxzS+mn2olqFJ5RHr+/tqMGxkjJ4iDGltUic5bns8ga5spihU7hpwLRGxAcrg==",
+  "dgSpecHash": "9BlnqE5hPN+I/PnuLMdLlsbkl7+5RSZx1Sa6sqO37TAdjwaNPwqz7r8Owyl2vn9vBWyKtR/Rm0ilSKGE9XnrPw==",
   "success": true,
   "projectFilePath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\OB-BE-dotnet\\API.csproj",
   "expectedPackageFiles": [
@@ -44,6 +44,7 @@
     "C:\\Users\\cldlk\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\cldlk\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\cldlk\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.0\\pipelines.sockets.unofficial.2.2.0.nupkg.sha512",
+    "C:\\Users\\cldlk\\.nuget\\packages\\quartz\\3.3.3\\quartz.3.3.3.nupkg.sha512",
     "C:\\Users\\cldlk\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\cldlk\\.nuget\\packages\\stackexchange.redis\\2.2.50\\stackexchange.redis.2.2.50.nupkg.sha512",
     "C:\\Users\\cldlk\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.1\\swashbuckle.aspnetcore.swagger.6.2.1.nupkg.sha512",

@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using BLL;
 using BLL.Redis;
 using BLL.Kafka;
+using Scheduler;
 
 namespace OB_BE_dotnet.Dress
 {
@@ -31,7 +32,7 @@ namespace OB_BE_dotnet.Dress
         private readonly DressService _dressService;
         private readonly DesignerService _designerService;
 
-        public DressController(ILogger<DressController> logger, UnitOfWork unitOfWork, IUnitOfWork iuow, IConfiguration configuration, IRedisService redis, IKafkaSender kafkaSender/*, ProcessSumService processSumService*/)
+        public DressController(ILogger<DressController> logger, UnitOfWork unitOfWork, IUnitOfWork iuow, IConfiguration configuration, IRedisService redis, IKafkaSender kafkaSender, SchedulerService schedulerService/*, ProcessSumService processSumService*/)
         {
             _logger = logger;
             _unitOfWork = unitOfWork;
@@ -44,7 +45,7 @@ namespace OB_BE_dotnet.Dress
 
             _mapper = config.CreateMapper();
 
-            _dressService ??= new DressService(kafkaSender, iuow, configuration, redis/*, processSumService*//*, msgSernderFactory*/);
+            _dressService ??= new DressService(kafkaSender, iuow, configuration, redis, schedulerService/*, processSumService*//*, msgSernderFactory*/);
             _designerService ??= new DesignerService(iuow, redis);
 
 

@@ -4,10 +4,12 @@ using DAL.Model;
 using DAL.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Scheduler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace BLL.Messaging
@@ -19,15 +21,18 @@ namespace BLL.Messaging
         private readonly IConfiguration _config;
         private readonly IRedisService _redis;
         private readonly ProcessSumService _processSumService;
+        private readonly SchedulerService _schedulerService;
+        //private readonly IJobFactory _jobFactory;
 
         //private readonly IMessageSenderFactory _msgSernderFactory;
 
-        public DressService(IKafkaSender kafkaSender, IUnitOfWork unitOfWork, IConfiguration config, IRedisService redis/*, ProcessSumService processSumService*//*, IMessageSenderFactory msgSernderFactory*/)
+        public DressService(IKafkaSender kafkaSender, IUnitOfWork unitOfWork, IConfiguration config, IRedisService redis, SchedulerService schedulerService/*, ProcessSumService processSumService*//*, IMessageSenderFactory msgSernderFactory*/)
         {
             _kafkaSender = kafkaSender;
             _unitOfWork = unitOfWork;
             _config = config;
             _redis = redis;
+            _schedulerService = schedulerService;
             //_processSumService = processSumService;
 
             //_msgSernderFactory = msgSernderFactory;
@@ -35,6 +40,11 @@ namespace BLL.Messaging
 
         public async Task<List<DressModel>> GetAllDressAsync()
         {
+            //var tokenSource = new CancellationToken();
+            //await _schedulerService.StartAsync(tokenSource);
+            _schedulerService.Initialize();
+            var tokenSource = new CancellationToken();
+            await _schedulerService.StartAsync(tokenSource);
             return await _unitOfWork.DressRepository.GetAll().Include(a => a.Designer).ToListAsync();
         }
         

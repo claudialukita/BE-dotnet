@@ -11,3 +11,9 @@ C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\obj\Debug\n
 C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\bin\Debug\netcoreapp3.1\DAL.dll
 C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\bin\Debug\netcoreapp3.1\DAL.pdb
 C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\obj\Debug\netcoreapp3.1\BLL.csproj.CopyComplete
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\bin\Debug\netcoreapp3.1\Scheduler.deps.json
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\bin\Debug\netcoreapp3.1\Scheduler.runtimeconfig.json
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\bin\Debug\netcoreapp3.1\Scheduler.runtimeconfig.dev.json
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\bin\Debug\netcoreapp3.1\Scheduler.exe
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\bin\Debug\netcoreapp3.1\Scheduler.dll
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\ClassLibrary1\bin\Debug\netcoreapp3.1\Scheduler.pdb

@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Quartz.Spi;
+using Scheduler;
+using Scheduler.Jobs;
 using System.Reflection;
 
 namespace OB_BE_dotnet
@@ -34,6 +37,14 @@ namespace OB_BE_dotnet
             services.AddScoped<IRedisService, RedisService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IKafkaSender, KafkaSender>();
+
+            services.AddSingleton<IJobFactory, QuartzJobFactory>();
+
+            services.AddTransient<LogTimeJob>();
+
+            services.AddTransient<SchedulerService>();
+
+
 
             //services.AddScoped<IMessageSenderFactory, MessageSenderFactory>();
 
