@@ -78,7 +78,7 @@ namespace BLL.Messaging
 
         public async Task<DressModel> CreateDressAsync(DressModel dressBody)
         {
-            await _kafkaSender.SendAsync("tryTopic", "tryMsg");
+            await _kafkaSender.SendAsync("tryTopic", dressBody);
             //_processSumService.ConsumerAsync("tryTopic", dressBody.Id.ToString(), System.Threading.CancellationToken.None);
             return await _unitOfWork.DressRepository.AddAsync(dressBody);
         }

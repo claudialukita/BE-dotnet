@@ -38,8 +38,12 @@ namespace OB_BE_dotnet
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IKafkaSender, KafkaSender>();
 
-            services.AddSingleton<IJobFactory, QuartzJobFactory>();
+            services.AddSingleton<IHostedService, ConsumerService>();
 
+            services.AddHostedService<SchedulerService>();
+
+            services.AddSingleton<IJobFactory, QuartzJobFactory>();
+            
             services.AddTransient<LogTimeJob>();
 
             services.AddTransient<SchedulerService>();
