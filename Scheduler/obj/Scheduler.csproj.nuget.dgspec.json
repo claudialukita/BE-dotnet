@@ -40,6 +40,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.ApplicationInsights.AspNetCore": {
+              "target": "Package",
+              "version": "[2.18.0, )"
+            },
             "Microsoft.Extensions.Configuration.Binder": {
               "target": "Package",
               "version": "[5.0.0, )"

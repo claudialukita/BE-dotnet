@@ -32,7 +32,7 @@ namespace OB_BE_dotnet.Dress
         private readonly DressService _dressService;
         private readonly DesignerService _designerService;
 
-        public DressController(ILogger<DressController> logger, UnitOfWork unitOfWork, IUnitOfWork iuow, IConfiguration configuration, IRedisService redis, IKafkaSender kafkaSender, SchedulerService schedulerService/*, ProcessSumService processSumService*/)
+        public DressController(ILogger<DressController> logger, UnitOfWork unitOfWork, IUnitOfWork iuow, /*IConfiguration configuration,*/ IRedisService redis, IKafkaSender kafkaSender, SchedulerService schedulerService/*, ProcessSumService processSumService*/)
         {
             _logger = logger;
             _unitOfWork = unitOfWork;
@@ -45,7 +45,7 @@ namespace OB_BE_dotnet.Dress
 
             _mapper = config.CreateMapper();
 
-            _dressService ??= new DressService(kafkaSender, iuow, configuration, redis, schedulerService/*, processSumService*//*, msgSernderFactory*/);
+            _dressService ??= new DressService(kafkaSender, iuow, /*configuration,*/ redis/*, schedulerService*//*, processSumService*//*, msgSernderFactory*/);
             _designerService ??= new DesignerService(iuow, redis);
 
 
@@ -73,16 +73,16 @@ namespace OB_BE_dotnet.Dress
         }
 
         /// <summary>
-        /// Get dress by name
+        /// Get dress by id
         /// </summary>
-        /// <param name="name">dress Model.</param>
+        /// <param name="id">dress Model.</param>
         /// <response code="200">Request ok.</response>
         [HttpGet]
         [Route("/Dress/GetDress/{id}")]
         [Produces("application/json")]
         [ProducesResponseType(typeof(DressModel), 200)]
         [ProducesResponseType(typeof(string), 400)]
-        public async Task<ActionResult> GetByNameAsync([FromRoute] Guid id)
+        public async Task<ActionResult> GetById([FromRoute] Guid id)
         {
             //var result = await _unitOfWork.DressRepository.GetAll().Where(x => x.Name.Contains(dressName)).Include(a => a.Designer).ToListAsync();
             var result = await _dressService.GetDressIdAsync(id);

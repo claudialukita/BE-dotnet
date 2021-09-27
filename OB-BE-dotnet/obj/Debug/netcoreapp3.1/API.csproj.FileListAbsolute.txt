@@ -126,3 +126,11 @@ C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\OB-BE-dotnet\bin\Debug\ne
 C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\OB-BE-dotnet\bin\Debug\netcoreapp3.1\Scheduler.dll
 C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\OB-BE-dotnet\bin\Debug\netcoreapp3.1\Scheduler.pdb
 C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\OB-BE-dotnet\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\OB-BE-dotnet\bin\Debug\netcoreapp3.1\Microsoft.ApplicationInsights.dll
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\OB-BE-dotnet\bin\Debug\netcoreapp3.1\Microsoft.ApplicationInsights.AspNetCore.dll
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\OB-BE-dotnet\bin\Debug\netcoreapp3.1\Microsoft.AI.DependencyCollector.dll
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\OB-BE-dotnet\bin\Debug\netcoreapp3.1\Microsoft.AI.EventCounterCollector.dll
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\OB-BE-dotnet\bin\Debug\netcoreapp3.1\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\OB-BE-dotnet\bin\Debug\netcoreapp3.1\Microsoft.AI.WindowsServer.dll
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\OB-BE-dotnet\bin\Debug\netcoreapp3.1\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\OB-BE-dotnet\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.ApplicationInsights.dll

@@ -18,25 +18,24 @@ namespace BLL.Messaging
     {
         private readonly IKafkaSender _kafkaSender;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IConfiguration _config;
+        //private readonly IConfiguration _config;
         private readonly IRedisService _redis;
-        private readonly ProcessSumService _processSumService;
-        private readonly SchedulerService _schedulerService;
+        //private readonly SchedulerService _schedulerService;
 
-        public DressService(IKafkaSender kafkaSender, IUnitOfWork unitOfWork, IConfiguration config, IRedisService redis, SchedulerService schedulerService)
+        public DressService(IKafkaSender kafkaSender, IUnitOfWork unitOfWork, /*IConfiguration config, */IRedisService redis/*, SchedulerService schedulerService*/)
         {
             _kafkaSender = kafkaSender;
             _unitOfWork = unitOfWork;
-            _config = config;
+            //_config = config;
             _redis = redis;
-            _schedulerService = schedulerService;
+            //_schedulerService = schedulerService;
         }
 
         public async Task<List<DressModel>> GetAllDressAsync()
         {
-            _schedulerService.Initialize();
-            var tokenSource = new CancellationToken();
-            await _schedulerService.StartAsync(tokenSource);
+            //_schedulerService.Initialize();
+            //var tokenSource = new CancellationToken();
+            //await _schedulerService.StartAsync(tokenSource);
             return await _unitOfWork.DressRepository.GetAll().Include(a => a.Designer).ToListAsync();
         }
         

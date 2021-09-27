@@ -1,0 +1,290 @@
+﻿[
+  {
+    "id": "68f8a912-55a9-4267-9975-08072b2f5db6",
+    "designer": {
+      "id": "1e4c242c-14f5-4888-6a6c-08d979a3357d",
+      "name": "Gucci",
+      "email": "guc@ci.com123",
+      "createdDate": "2021-09-20T11:37:41.7928605",
+      "updatedDate": "2021-09-20T11:37:43.2797366"
+    },
+    "designerId": "1e4c242c-14f5-4888-6a6c-08d979a3357d",
+    "name": "sf",
+    "type": "string",
+    "color": "string",
+    "size": "XL123",
+    "price": 0,
+    "createdDate": "2021-09-20T11:37:41.7927051",
+    "updatedDate": "2021-09-20T11:37:43.2805873"
+  },
+  {
+    "id": "6c86861c-ba5e-4507-9cdf-48053885f6bd",
+    "designer": {
+      "id": "76cd7ede-b0de-47bd-a85f-3342dfcc173b",
+      "name": "nana",
+      "email": "nana",
+      "createdDate": "2021-09-21T19:37:19.71778",
+      "updatedDate": null
+    },
+    "designerId": "76cd7ede-b0de-47bd-a85f-3342dfcc173b",
+    "name": "nana",
+    "type": "nana",
+    "color": "nana",
+    "size": "XL",
+    "price": 0,
+    "createdDate": "2021-09-21T19:37:19.7176583",
+    "updatedDate": null
+  },
+  {
+    "id": "66e5454e-1f51-40da-8a7c-4a58bde59396",
+    "designer": {
+      "id": "d5683f92-8dfe-46bf-a10f-162f1d7d07cb",
+      "name": "stringy12",
+      "email": "stringy",
+      "createdDate": "2021-09-22T13:52:47.548584",
+      "updatedDate": null
+    },
+    "designerId": "d5683f92-8dfe-46bf-a10f-162f1d7d07cb",
+    "name": "stringy12",
+    "type": "stringy",
+    "color": "stringy",
+    "size": "4",
+    "price": 1002,
+    "createdDate": "2021-09-22T13:52:47.5485776",
+    "updatedDate": null
+  },
+  {
+    "id": "f47f11bf-2031-4304-bc3e-5a7a6950f680",
+    "designer": {
+      "id": "f8702627-7c5f-4aac-9743-7de67c5e853e",
+      "name": "Kate Spade",
+      "email": "kate@spade.com",
+      "createdDate": "2021-09-17T15:59:46.2989897",
+      "updatedDate": null
+    },
+    "designerId": "f8702627-7c5f-4aac-9743-7de67c5e853e",
+    "name": "dress kate",
+    "type": "string",
+    "color": "string",
+    "size": "L",
+    "price": 0,
+    "createdDate": "2021-09-17T15:59:46.2989281",
+    "updatedDate": null
+  },
+  {
+    "id": "40ed896b-2e79-4a60-b44f-5d823318e6db",
+    "designer": {
+      "id": "1e4c242c-14f5-4888-6a6c-08d979a3357d",
+      "name": "Gucci",
+      "email": "guc@ci.com123",
+      "createdDate": "2021-09-20T11:37:41.7928605",
+      "updatedDate": "2021-09-20T11:37:43.2797366"
+    },
+    "designerId": "1e4c242c-14f5-4888-6a6c-08d979a3357d",
+    "name": "string",
+    "type": "string",
+    "color": "string",
+    "size": "XL",
+    "price": 0,
+    "createdDate": "2021-09-16T07:46:22.1048414",
+    "updatedDate": null
+  },
+  {
+    "id": "f8d7fa0d-84ff-416a-acf7-69c358f8b281",
+    "designer": {
+      "id": "06d8ace9-4acc-4860-9823-94aefcbf18cf",
+      "name": "dummy",
+      "email": "dumm@y.com",
+      "createdDate": "2021-09-17T14:21:47.5645774",
+      "updatedDate": null
+    },
+    "designerId": "06d8ace9-4acc-4860-9823-94aefcbf18cf",
+    "name": "sa",
+    "type": "string",
+    "color": "string",
+    "size": "M",
+    "price": 0,
+    "createdDate": "2021-09-17T14:21:47.5645365",
+    "updatedDate": null
+  },
+  {
+    "id": "226ada9a-f846-4d80-8d02-6ba9855bcc31",
+    "designer": {
+      "id": "8dd03ee0-da87-431e-b3ea-d6a35f4d7a91",
+      "name": "cc",
+      "email": "cc",
+      "createdDate": "2021-09-22T14:51:25.6586263",
+      "updatedDate": null
+    },
+    "designerId": "8dd03ee0-da87-431e-b3ea-d6a35f4d7a91",
+    "name": "cc",
+    "type": "cc",
+    "color": "cc",
+    "size": "cc",
+    "price": 0,
+    "createdDate": "2021-09-22T14:51:25.6499823",
+    "updatedDate": null
+  },
+  {
+    "id": "a1709220-31ed-41d3-955c-728da9cdc65d",
+    "designer": {
+      "id": "1e4c242c-14f5-4888-6a6c-08d979a3357d",
+      "name": "Gucci",
+      "email": "guc@ci.com123",
+      "createdDate": "2021-09-20T11:37:41.7928605",
+      "updatedDate": "2021-09-20T11:37:43.2797366"
+    },
+    "designerId": "1e4c242c-14f5-4888-6a6c-08d979a3357d",
+    "name": "try dress",
+    "type": "string",
+    "color": "string",
+    "size": "L",
+    "price": 111.11,
+    "createdDate": "2021-09-17T17:34:26.5403352",
+    "updatedDate": null
+  },
+  {
+    "id": "52ce34bc-0024-4c22-a807-8d52d25d60f9",
+    "designer": {
+      "id": "7af098f9-7239-4365-a3be-449221ceabb7",
+      "name": "stringy1",
+      "email": "stringy",
+      "createdDate": "2021-09-22T13:52:29.2824915",
+      "updatedDate": null
+    },
+    "designerId": "7af098f9-7239-4365-a3be-449221ceabb7",
+    "name": "stringy1",
+    "type": "stringy",
+    "color": "stringy",
+    "size": "4",
+    "price": 1002,
+    "createdDate": "2021-09-22T13:52:29.2824852",
+    "updatedDate": null
+  },
+  {
+    "id": "0919c619-c698-458c-a19b-8e71b305ea4a",
+    "designer": {
+      "id": "5189d122-0645-4673-8d80-6a0c40327fee",
+      "name": "dd",
+      "email": "dd",
+      "createdDate": "2021-09-22T14:55:57.5823654",
+      "updatedDate": null
+    },
+    "designerId": "5189d122-0645-4673-8d80-6a0c40327fee",
+    "name": "dd",
+    "type": "dd",
+    "color": "dd",
+    "size": "dd",
+    "price": 0,
+    "createdDate": "2021-09-22T14:55:57.5776696",
+    "updatedDate": null
+  },
+  {
+    "id": "675edbc6-d36c-4c0a-bf8e-ba3e2c94274d",
+    "designer": {
+      "id": "f547aa8f-d285-4fbc-a971-5eb5c0f0e0f7",
+      "name": "try",
+      "email": "try",
+      "createdDate": "2021-09-21T18:40:02.5855246",
+      "updatedDate": null
+    },
+    "designerId": "f547aa8f-d285-4fbc-a971-5eb5c0f0e0f7",
+    "name": "try",
+    "type": "try",
+    "color": "try",
+    "size": "try",
+    "price": 0,
+    "createdDate": "2021-09-21T18:40:02.585421",
+    "updatedDate": null
+  },
+  {
+    "id": "f28f0b16-6f41-445b-b154-c2650a63c796",
+    "designer": {
+      "id": "05e17906-5412-4ded-817b-427e1a4fccfb",
+      "name": "stringx",
+      "email": "stringx",
+      "createdDate": "2021-09-22T13:40:22.6350334",
+      "updatedDate": null
+    },
+    "designerId": "05e17906-5412-4ded-817b-427e1a4fccfb",
+    "name": "stringx",
+    "type": "stringx",
+    "color": "stringx",
+    "size": "2",
+    "price": 10000,
+    "createdDate": "2021-09-22T13:40:22.6348731",
+    "updatedDate": null
+  },
+  {
+    "id": "55abce47-9c7c-4b65-b6fa-d09aacfb945f",
+    "designer": {
+      "id": "1e4c242c-14f5-4888-6a6c-08d979a3357d",
+      "name": "Gucci",
+      "email": "guc@ci.com123",
+      "createdDate": "2021-09-20T11:37:41.7928605",
+      "updatedDate": "2021-09-20T11:37:43.2797366"
+    },
+    "designerId": "1e4c242c-14f5-4888-6a6c-08d979a3357d",
+    "name": "dress",
+    "type": "string",
+    "color": "string",
+    "size": "L",
+    "price": 0,
+    "createdDate": "2021-09-16T08:38:15.0472266",
+    "updatedDate": null
+  },
+  {
+    "id": "849565f0-fe65-45de-9c28-d15a83579557",
+    "designer": {
+      "id": "1e4c242c-14f5-4888-6a6c-08d979a3357d",
+      "name": "Gucci",
+      "email": "guc@ci.com123",
+      "createdDate": "2021-09-20T11:37:41.7928605",
+      "updatedDate": "2021-09-20T11:37:43.2797366"
+    },
+    "designerId": "1e4c242c-14f5-4888-6a6c-08d979a3357d",
+    "name": "qwe",
+    "type": "string",
+    "color": "string",
+    "size": "LX",
+    "price": 7595,
+    "createdDate": "2021-09-20T11:08:55.2132634",
+    "updatedDate": "2021-09-20T11:08:56.6545275"
+  },
+  {
+    "id": "6aaa4ec0-122d-4b89-9427-d9afed535b6b",
+    "designer": {
+      "id": "b3770f62-c8f2-4fec-998a-b8e855e0214a",
+      "name": "stringy",
+      "email": "stringy",
+      "createdDate": "2021-09-22T13:52:05.3099225",
+      "updatedDate": null
+    },
+    "designerId": "b3770f62-c8f2-4fec-998a-b8e855e0214a",
+    "name": "stringy",
+    "type": "stringy",
+    "color": "stringy",
+    "size": "4",
+    "price": 1002,
+    "createdDate": "2021-09-22T13:52:05.3097557",
+    "updatedDate": null
+  },
+  {
+    "id": "a5981e3a-66ca-4032-878b-e07035e0cebd",
+    "designer": {
+      "id": "673f853f-7e4a-4ec8-9689-08d979be223d",
+      "name": "Gucci",
+      "email": "gucci@update.com",
+      "createdDate": "2021-09-17T16:32:47.8192992",
+      "updatedDate": null
+    },
+    "designerId": "673f853f-7e4a-4ec8-9689-08d979be223d",
+    "name": "gucci",
+    "type": "string",
+    "color": "string",
+    "size": "XXL",
+    "price": 0,
+    "createdDate": "2021-09-17T16:32:47.8192933",
+    "updatedDate": "2021-09-17T16:32:56.0138308"
+  }
+]

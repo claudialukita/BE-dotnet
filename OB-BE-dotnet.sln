@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "ClassLibrary1\BLL.cs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{C4AB9BD5-9AAD-4AA5-9A3A-B0CED525D7ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheduler", "Scheduler\Scheduler.csproj", "{8D6B08CC-5270-462D-A443-E9C8E75006B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scheduler", "Scheduler\Scheduler.csproj", "{8D6B08CC-5270-462D-A443-E9C8E75006B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL.Test", "BLL.Test\BLL.Test.csproj", "{8E839D87-9476-4F16-A3F7-9F04EDC83C7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{8D6B08CC-5270-462D-A443-E9C8E75006B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D6B08CC-5270-462D-A443-E9C8E75006B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D6B08CC-5270-462D-A443-E9C8E75006B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E839D87-9476-4F16-A3F7-9F04EDC83C7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E839D87-9476-4F16-A3F7-9F04EDC83C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E839D87-9476-4F16-A3F7-9F04EDC83C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E839D87-9476-4F16-A3F7-9F04EDC83C7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
