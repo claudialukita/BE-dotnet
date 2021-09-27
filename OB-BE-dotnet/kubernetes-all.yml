@@ -1,0 +1,64 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+      app: OB-BE-dotnet
+  name: OB-BE-dotnet
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+        app: OB-BE-dotnet
+  strategy:
+    rollingUpdate:
+        maxSurge: 1
+        maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+          app: OB-BE-dotnet
+      name: OB-BE-dotnet
+    spec:
+      containers:
+        - name: OB-BE-dotnet
+          image: onboardskd.azurecr.io/OB-BE-dotnet:latest
+          imagePullPolicy: Always
+          env:
+            - name: ConnectionStrings__DefaultConnection
+              valueFrom:
+                secretKeyRef:
+                  name: sql-server-claudia
+                  key: on-boarding-skd-db
+            - name: AuthorizationServer__Address
+              valueFrom:
+                configMapKeyRef:
+                  name: config-claudia
+                  key: AuthorizationServerAddress
+          ports:
+          - containerPort: 80
+          resources:
+            requests:
+                cpu: 100m
+                memory: 128Mi
+            limits:
+                cpu: 125m
+                memory: 256Mi
+      restartPolicy: Always
+      serviceAccountName: ""
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: OB-BE-dotnet
+  name: OB-BE-dotnet
+spec:
+  ports:
+  - port: 80
+  type: LoadBalancer
+  selector:
+    app: OB-BE-dotnet
+status:
+  loadBalancer: {}
