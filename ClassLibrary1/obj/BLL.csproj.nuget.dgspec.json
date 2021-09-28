@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\ClassLibrary1\\BLL.csproj": {}
+    "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\ClassLibrary1\\BLL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\ClassLibrary1\\BLL.csproj": {
+    "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\ClassLibrary1\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\ClassLibrary1\\BLL.csproj",
+        "projectUniqueName": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\ClassLibrary1\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\ClassLibrary1\\BLL.csproj",
+        "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\ClassLibrary1\\BLL.csproj",
         "packagesPath": "C:\\Users\\cldlk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\ClassLibrary1\\obj\\",
+        "outputPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\ClassLibrary1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cldlk\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\DAL\\DAL.csproj"
+              "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\Scheduler\\Scheduler.csproj": {
-                "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\Scheduler\\Scheduler.csproj"
+              "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\Scheduler\\Scheduler.csproj": {
+                "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\Scheduler\\Scheduler.csproj"
               }
             }
           }
@@ -103,14 +103,14 @@
         }
       }
     },
-    "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\DAL\\DAL.csproj": {
+    "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\cldlk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cldlk\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -195,14 +195,14 @@
         }
       }
     },
-    "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\Scheduler\\Scheduler.csproj": {
+    "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\Scheduler\\Scheduler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\Scheduler\\Scheduler.csproj",
+        "projectUniqueName": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\Scheduler\\Scheduler.csproj",
         "projectName": "Scheduler",
-        "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\Scheduler\\Scheduler.csproj",
+        "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\Scheduler\\Scheduler.csproj",
         "packagesPath": "C:\\Users\\cldlk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\Scheduler\\obj\\",
+        "outputPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\Scheduler\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cldlk\\AppData\\Roaming\\NuGet\\NuGet.Config",

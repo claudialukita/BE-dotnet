@@ -6520,11 +6520,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\DAL\\DAL.csproj",
+      "projectUniqueName": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\DAL\\DAL.csproj",
+      "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\DAL\\DAL.csproj",
       "packagesPath": "C:\\Users\\cldlk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\DAL\\obj\\",
+      "outputPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\cldlk\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -7132,11 +7132,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\OB-BE-dotnet\\API.csproj",
+      "projectUniqueName": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\OB-BE-dotnet\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\OB-BE-dotnet\\API.csproj",
+      "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\OB-BE-dotnet\\API.csproj",
       "packagesPath": "C:\\Users\\cldlk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\OB-BE-dotnet\\obj\\",
+      "outputPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\OB-BE-dotnet\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\cldlk\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7153,14 +7153,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\ClassLibrary1\\BLL.csproj": {
-              "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\ClassLibrary1\\BLL.csproj"
+            "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\ClassLibrary1\\BLL.csproj": {
+              "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\ClassLibrary1\\BLL.csproj"
             },
-            "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\DAL\\DAL.csproj"
+            "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\DAL\\DAL.csproj"
             },
-            "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\Scheduler\\Scheduler.csproj": {
-              "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\Scheduler\\Scheduler.csproj"
+            "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\Scheduler\\Scheduler.csproj": {
+              "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\Scheduler\\Scheduler.csproj"
             }
           }
         }

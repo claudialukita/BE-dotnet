@@ -9845,11 +9845,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\BLL.Test\\BLL.Test.csproj",
+      "projectUniqueName": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\BLL.Test\\BLL.Test.csproj",
       "projectName": "BLL.Test",
-      "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\BLL.Test\\BLL.Test.csproj",
+      "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\BLL.Test\\BLL.Test.csproj",
       "packagesPath": "C:\\Users\\cldlk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\BLL.Test\\obj\\",
+      "outputPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\BLL.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\cldlk\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9866,11 +9866,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\ClassLibrary1\\BLL.csproj": {
-              "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\ClassLibrary1\\BLL.csproj"
+            "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\ClassLibrary1\\BLL.csproj": {
+              "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\ClassLibrary1\\BLL.csproj"
             },
-            "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\DAL\\DAL.csproj"
+            "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\DAL\\DAL.csproj"
             }
           }
         }

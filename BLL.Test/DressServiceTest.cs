@@ -26,8 +26,8 @@ namespace BLL.Test
 
         public DressServiceTest()
         {
-            //dresses = CommonHelper.LoadDataFromFile<IEnumerable<DressModel>>(@"..\..\..\MockData\Dress.json");
-            dresses = CommonHelper.LoadDataFromFile<IEnumerable<DressModel>>(@"MockData\Dress.json");
+            dresses = CommonHelper.LoadDataFromFile<IEnumerable<DressModel>>(@"..\..\..\MockData\Dress.json");
+            //dresses = CommonHelper.LoadDataFromFile<IEnumerable<DressModel>>(@"MockData\Dress.json");
             uow = MockUnitOfWork();
             redis = MockRedis();
             kafka = MockKafka();

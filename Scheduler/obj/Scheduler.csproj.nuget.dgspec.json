@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\Scheduler\\Scheduler.csproj": {}
+    "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\Scheduler\\Scheduler.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\Scheduler\\Scheduler.csproj": {
+    "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\Scheduler\\Scheduler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\Scheduler\\Scheduler.csproj",
+        "projectUniqueName": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\Scheduler\\Scheduler.csproj",
         "projectName": "Scheduler",
-        "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\Scheduler\\Scheduler.csproj",
+        "projectPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\Scheduler\\Scheduler.csproj",
         "packagesPath": "C:\\Users\\cldlk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cldlk\\Documents\\Project\\On-Boarding\\BE-dotnet\\Scheduler\\obj\\",
+        "outputPath": "C:\\Users\\cldlk\\Documents\\Project\\BE-dotnet\\Scheduler\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cldlk\\AppData\\Roaming\\NuGet\\NuGet.Config",
