@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: ob-be-dotnet
-          image: acronboarding.azurecr.io/OB-BE-dotnet:latest
+          image: acronboarding.azurecr.io/claudia-ob-api:latest
           imagePullPolicy: Always
           env:
             - name: ConnectionStrings__DefaultConnection
