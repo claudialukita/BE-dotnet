@@ -22,14 +22,14 @@ spec:
     spec:
       containers:
         - name: OB-BE-dotnet
-          image: onboardskd.azurecr.io/OB-BE-dotnet:latest
+          image: acronboarding.azurecr.io/OB-BE-dotnet:latest
           imagePullPolicy: Always
           env:
             - name: ConnectionStrings__DefaultConnection
               valueFrom:
                 secretKeyRef:
                   name: sql-server-claudia
-                  key: on-boarding-skd-db
+                  key: on-boarding-astra-star-claudia
             - name: AuthorizationServer__Address
               valueFrom:
                 configMapKeyRef:
