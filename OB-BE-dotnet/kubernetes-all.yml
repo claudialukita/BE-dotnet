@@ -2,13 +2,13 @@
 kind: Deployment
 metadata:
   labels:
-      app: OB-BE-dotnet
-  name: OB-BE-dotnet
+      app: ob-be-dotnet
+  name: ob-be-dotnet
 spec:
   replicas: 1
   selector:
     matchLabels:
-        app: OB-BE-dotnet
+        app: ob-be-dotnet
   strategy:
     rollingUpdate:
         maxSurge: 1
@@ -17,11 +17,11 @@ spec:
   template:
     metadata:
       labels:
-          app: OB-BE-dotnet
-      name: OB-BE-dotnet
+          app: ob-be-dotnet
+      name: ob-be-dotnet
     spec:
       containers:
-        - name: OB-BE-dotnet
+        - name: ob-be-dotnet
           image: acronboarding.azurecr.io/OB-BE-dotnet:latest
           imagePullPolicy: Always
           env:
@@ -52,13 +52,13 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: OB-BE-dotnet
-  name: OB-BE-dotnet
+    app: ob-be-dotnet
+  name: ob-be-dotnet
 spec:
   ports:
   - port: 80
   type: LoadBalancer
   selector:
-    app: OB-BE-dotnet
+    app: ob-be-dotnet
 status:
   loadBalancer: {}
