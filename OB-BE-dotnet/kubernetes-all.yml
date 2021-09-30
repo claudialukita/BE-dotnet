@@ -28,13 +28,8 @@ spec:
             - name: ConnectionStrings__DefaultConnection
               valueFrom:
                 secretKeyRef:
-                  name: sql-server-claudia
-                  key: on-boarding-astra-star-claudia
-            - name: AuthorizationServer__Address
-              valueFrom:
-                configMapKeyRef:
-                  name: config-claudia
-                  key: AuthorizationServerAddress
+                  name: secret-claudia
+                  key: extra
           ports:
           - containerPort: 80
           resources:
