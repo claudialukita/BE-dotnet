@@ -100,6 +100,8 @@ namespace OB_BE_dotnet.Dress
         [Produces("application/json")]
         [ProducesResponseType(typeof(DressModel), 200)]
         [ProducesResponseType(typeof(string), 400)]
+        [Authorize]
+
         public async Task<ActionResult> GetById([FromRoute] Guid id)
         {
             //var result = await _unitOfWork.DressRepository.GetAll().Where(x => x.Name.Contains(dressName)).Include(a => a.Designer).ToListAsync();
@@ -122,6 +124,8 @@ namespace OB_BE_dotnet.Dress
         [Produces("application/json")]
         [ProducesResponseType(typeof(DressModel), 200)]
         [ProducesResponseType(typeof(string), 400)]
+        [Authorize]
+
         public async Task<ActionResult> GetByNameAsync([FromRoute] string dressName)
         {
             //var result = await _unitOfWork.DressRepository.GetAll().Where(x => x.Name.Contains(dressName)).Include(a => a.Designer).ToListAsync();
@@ -145,6 +149,8 @@ namespace OB_BE_dotnet.Dress
         [Produces("application/json")]
         [ProducesResponseType(typeof(DressByDesignerDTO), 200)]
         [ProducesResponseType(typeof(string), 400)]
+        [Authorize]
+
         public async Task<ActionResult> CreateDressAsync([FromBody] DressByDesignerNoIdDTO dressBody)
         {
             try
@@ -225,6 +231,8 @@ namespace OB_BE_dotnet.Dress
         [Produces("application/json")]
         [ProducesResponseType(typeof(string), 200)]
         [ProducesResponseType(typeof(string), 400)]
+        [Authorize]
+
         public async Task<ActionResult> UpdateAsync([FromRoute] Guid id, [FromBody] DressByDesignerNoIdDTO dressBody)
         {
 
@@ -281,6 +289,8 @@ namespace OB_BE_dotnet.Dress
         [Produces("application/json")]
         [ProducesResponseType(typeof(string), 200)]
         [ProducesResponseType(typeof(string), 400)]
+        [Authorize]
+
         public async Task<ActionResult> DeleteDressAsync([FromRoute] Guid id)
         {
             //bool isExist = _unitOfWork.DressRepository.IsExist(x => x.Id == id);
@@ -310,6 +320,8 @@ namespace OB_BE_dotnet.Dress
         [Produces("application/json")]
         [ProducesResponseType(typeof(string), 200)]
         [ProducesResponseType(typeof(string), 400)]
+        [Authorize]
+
         public async Task<ActionResult> DeleteDressAsync([FromRoute] string dressName)
         {
             //bool isExist = _unitOfWork.DressRepository.IsExist(x => x.Name == dressName);

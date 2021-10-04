@@ -56,14 +56,14 @@ namespace OB_BE_dotnet
            {
                options.ConfigureDbContext = builder =>
                    builder.UseSqlServer(
-                       Configuration.GetConnectionString("DefaultConnection"),
+                       Configuration.GetConnectionString("DefaultConnectionAuth"),
                        sql => sql.MigrationsAssembly(migrationsAssembly));
            })
            .AddOperationalStore(options =>
            {
                options.ConfigureDbContext = builder =>
                    builder.UseSqlServer(
-                       Configuration.GetConnectionString("DefaultConnection"),
+                       Configuration.GetConnectionString("DefaultConnectionAuth"),
                        sql => sql.MigrationsAssembly(migrationsAssembly));
                options.EnableTokenCleanup = true;
                options.TokenCleanupInterval = 3600;
@@ -96,24 +96,6 @@ namespace OB_BE_dotnet
             services.AddControllers();
 
             services.AddDbContext<OnBoardingSkdDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-            //services.AddDbContextPool<OnBoardingSkdDbContext>(options =>
-            //{
-            //    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), x =>
-            //    {
-            //        x.CommandTimeout((int)TimeSpan.FromMinutes(10).TotalSeconds);
-            //        x.EnableRetryOnFailure(maxRetryCount: 10, maxRetryDelay: TimeSpan.FromSeconds(5), errorNumbersToAdd: null);
-            //    });
-            //});
-            
-            //services.AddDbContextPool<OnBoardingAuthSkdDbContext>(options =>
-            //{
-            //    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), x =>
-            //    {
-            //        x.CommandTimeout((int)TimeSpan.FromMinutes(10).TotalSeconds);
-            //        x.EnableRetryOnFailure(maxRetryCount: 10, maxRetryDelay: TimeSpan.FromSeconds(5), errorNumbersToAdd: null);
-            //    });
-            //});
 
             services.AddScoped<IRedisService, RedisService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -179,7 +161,11 @@ namespace OB_BE_dotnet
 
             app.UseRouting();
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
+
+            app.UseIdentityServer();
 
             app.UseEndpoints(endpoints =>
             {
