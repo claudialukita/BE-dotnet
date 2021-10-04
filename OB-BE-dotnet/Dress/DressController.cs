@@ -15,6 +15,7 @@ using BLL;
 using BLL.Redis;
 using BLL.Kafka;
 using Scheduler;
+using Microsoft.AspNetCore.Authorization;
 
 namespace OB_BE_dotnet.Dress
 {
@@ -50,6 +51,21 @@ namespace OB_BE_dotnet.Dress
 
 
         }
+
+        /// <summary>
+        /// Check authorization only
+        /// </summary>
+        /// <response code="200">Request successful.</response>
+        /// <response code="400">Request failed because of an exception.</response>
+        [ProducesResponseType(200)]
+        [HttpGet]
+        [Route("check")]
+        [Authorize]
+        public ActionResult CheckAuthRole()
+        {
+            return Ok();
+        }
+
         /// <summary>
         /// Get all dress
         /// </summary>
@@ -59,6 +75,8 @@ namespace OB_BE_dotnet.Dress
         [Produces("application/json")]
         [ProducesResponseType(typeof(List<DressModel>), 200)]
         [ProducesResponseType(typeof(string), 400)]
+        [Authorize]
+
         public async Task<ActionResult> GetAllAsync()
         {
 

@@ -11,3 +11,16 @@ C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\DAL\obj\Debug\netcoreapp3
 C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\DAL\obj\Debug\netcoreapp3.1\DAL.dll
 C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\DAL\obj\Debug\netcoreapp3.1\DAL.pdb
 C:\Users\cldlk\Documents\Project\On-Boarding\BE-dotnet\DAL\obj\Debug\netcoreapp3.1\DAL.genruntimeconfig.cache
+C:\Users\cldlk\Documents\Project\BE-dotnet\DAL\bin\Debug\netcoreapp3.1\DAL.deps.json
+C:\Users\cldlk\Documents\Project\BE-dotnet\DAL\bin\Debug\netcoreapp3.1\DAL.runtimeconfig.json
+C:\Users\cldlk\Documents\Project\BE-dotnet\DAL\bin\Debug\netcoreapp3.1\DAL.runtimeconfig.dev.json
+C:\Users\cldlk\Documents\Project\BE-dotnet\DAL\bin\Debug\netcoreapp3.1\DAL.dll
+C:\Users\cldlk\Documents\Project\BE-dotnet\DAL\bin\Debug\netcoreapp3.1\DAL.pdb
+C:\Users\cldlk\Documents\Project\BE-dotnet\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.AssemblyReference.cache
+C:\Users\cldlk\Documents\Project\BE-dotnet\DAL\obj\Debug\netcoreapp3.1\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cldlk\Documents\Project\BE-dotnet\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfoInputs.cache
+C:\Users\cldlk\Documents\Project\BE-dotnet\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfo.cs
+C:\Users\cldlk\Documents\Project\BE-dotnet\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\cldlk\Documents\Project\BE-dotnet\DAL\obj\Debug\netcoreapp3.1\DAL.dll
+C:\Users\cldlk\Documents\Project\BE-dotnet\DAL\obj\Debug\netcoreapp3.1\DAL.pdb
+C:\Users\cldlk\Documents\Project\BE-dotnet\DAL\obj\Debug\netcoreapp3.1\DAL.genruntimeconfig.cache
